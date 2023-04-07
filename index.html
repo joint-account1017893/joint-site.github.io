@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<title>${title}</title>
+
+		<link rel="stylesheet" href="css/style.css">                           <!-- メインCSS読み込み     -->
+		<link rel="stylesheet" href="css/reset.css">                           <!-- リセット用CSS読み込み -->
+		<link rel="stylesheet" href="css/calendar.css">                        <!-- カレンダー用CSS読み込み -->
+		<link rel="stylesheet" href="./css/dycalendar.css">                    <!-- カレンダー用CSS読み込み -->
+		<link rel="stylesheet" href="./css/popup.css">                         <!-- ポップアップ用CSS読み込み -->
+		<link id="change_css" rel="stylesheet" href="./css/color/color1.css">
+		<!-- <link rel="stylesheet" href="css/slide.css"> -->                  <!-- 画像用CSS読み込み     -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">            <!-- google font読み込み   -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400&display=swap" rel="stylesheet">  <!-- font type for "Zen Maru Gothic" -->
+
+		<script src="js/fixmenu_pagetop.js"></script>                          <!-- メニュー欄制御js読み込み　　   -->
+		<script src="js/contents_select_app.js"></script>                      <!-- コンテンツ切り替え用js読み込み -->
+		<script src="js/openclose_app.js"></script>                            <!-- メニューバー制御js読み込み     -->
+		<script src="js/time.js"></script>                                     <!-- デジタル時計用js読み込み       -->
+		<script src="js/language.js"></script>                                 <!-- 言語翻訳用js読み込み           -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	</head>
+
+	<body>
+
+		<div id="container">
+
+			<header>
+				<!-- トップアイコン -->
+				<h1 id="logo">
+					<a href="index.html"><img style="width: 100px;" src="images/main_logo.png"></a>
+				</h1>
+				<!-- 時計 -->
+				<div class="time-cont" id="contact">
+					<p class="tel clock-date"></p><br>
+					<p class="tel clock-time"></p>
+					<input id="clock_button" type="submit" value=" " onclick="clock_button_footer">
+				</div>
+				<div class="popupb" id="popupb">
+					<div class="popup">
+							<div class="box">
+								<div class="container">
+									<div id="dycalendar"></div>
+								</div>
+							</div>
+							<script src="./js/dycalendar.js"></script>
+							<script>
+								dycalendar.draw({
+								target: '#dycalendar',
+								type: 'month',
+								dayformat: 'full',
+								monthformat: 'full',
+								highlighttargetdate: true,
+								prevnextbutton: 'show'
+							})
+							</script>
+						<button id="close"></button>
+					</div>
+					<!-- ポップアップ専用スクリプト -->
+					<script src="./js/popup.js"></script>
+				</div>
+				<br>
+
+
+
+
+				<!-- 言語設定項目 -->
+				<div id="contact">
+					<p class="tel">&raquo;&nbsp;<button id="">中文</button></p>
+				</div>
+				<div id="contact">
+					<p class="tel">&raquo;&nbsp;<button id="">English</button></p>
+				</div>
+				<div id="contact">
+					<p class="tel">&raquo;&nbsp;<button id="">日本語</button></p>
+				</div>
+			</header>
+
+			<!-- 801px以上の場合 -->
+			<nav id="menubar">
+					<button class="color1 left_border" id="index_button" onclick="index_button_s()">トップページ<br><span>TOP PAGE</span></button>
+					<button class="color5" id="news_button" onclick="news_button_s()">ニュース<br><span>NEWS</span></button>
+					<button class="color6" id="activity_button" onclick="activity_button_s()">活動<br><span>ACTIVITY</span></button>
+					<button class="color2" id="health_button" onclick="health_button_s()">健康<br><span>HEALTH</span></button>
+					<button class="color4" id="tourism_button" onclick="tourism_button_s()">観光<br><span>SIGHTSEEING</span></button>
+					<button class="color3" id="crime_info_button" onclick="crime_info_button_s()">犯罪情報<br><span>CRIME INFO</span></button>
+			</nav>
+			<!-- 800px以下の場合 -->
+			<nav id="menubar-s">
+				<ul>
+					<li>
+						<a class="tel">
+							&raquo;&nbsp;<button id="">中文</button>    <br>
+							&raquo;&nbsp;<button id="">English</button> <br>
+							&raquo;&nbsp;<button id="">日本語</button>
+						</a>
+					</li>
+					<li><a class="color1"><button id="index_button" onclick="index_button_s()">トップページ<span>TOP PAGE</span></button></a></li>
+					<li><a class="color5"><button id="news_button" onclick="news_button_s()">ニュース<span>NEWS</span></button></a></li>
+					<li><a class="color6"><button id="activity_button" onclick="activity_button_s()">活動<span>ACTIVITY</span></button></a></li>
+					<li><a class="color4"><button id="tourism_button" onclick="tourism_button_s()">観光<span>SIGHTSEEING</span></button></a></li>
+					<li><a class="color2"><button id="health_button" onclick="health_button_s()">健康<span>HEALTH</span></button></a></li>
+					<li><a class="color3"><button id="crime_info_button" onclick="crime_info_button_s()">犯罪情報<span>CRIME INFO</span></button></a></li>
+				</ul>
+			</nav>
+
+			<!--スライドショー
+			<aside id="mainimg">					
+				<img src="images/1.jpg" alt="" class="slide0">
+				<img src="images/1.jpg" alt="" class="slide1">
+				<img src="images/2.jpg" alt="" class="slide2">
+				<img src="images/3.jpg" alt="" class="slide3">
+			</aside>
+			-->
+			
+			<div id="contents">
+				<div id="contents-in">
+
+					<div id="sub">
+						<nav>
+							<h2>総合ニュース</h2>
+							<ul class="submenu">
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+							</ul>							
+						</nav>
+					</div>
+
+					<!--/////////////// [index] js切り替え区間 ///////////////-->
+					<div id="index">
+						<div id="main">
+
+							<section>
+								<h2>当サイトについて</h2>
+
+								<h3>目的</h3>
+								<p>調整中です。</p>
+
+								<p><strong class="color1">■ 注意 ■</strong><br>
+									調整中です。</p>
+							</section>
+							<br>
+
+
+							<section>
+								<h2>当サイトのご利用前に必ずお読み下さい</h2>
+
+								<h3>利用規約のご案内</h3>
+								<p>当サイトは久喜工業高校に在学している電気科の佐藤琢磨と情報科の久保田正真、蓬田温により作られています。<br><a href="">利用規約</a>をご一読の上でご利用下さい。</p>
+
+								<p><strong class="color1">■ 注意 ■</strong><br>
+								調整中です。</p>
+							</section>
+
+							<br><br>
+
+							<!-- <span class="newicon">NEW</span> -->
+							<section id="new">
+								<h2>サイトの更新情報・お知らせ</h2>
+								<dl>
+									<dt>2023/03/21</dt>
+									<dd>トップページのCSSを修正</dd>
+									<dt>2023/03/19</dt>
+									<dd>トップページ完成</dd>
+									<dt>2023/03/18</dt>
+									<dd>サイト構築を開始</dd>
+									<dt>2023/03/17</dt>
+									<dd>サイトの考案、企画</dd>
+								</dl>
+								<p class="r">&raquo;&nbsp;<a href="Page-ContentsUpdate-Log.php">過去ログ一覧</a></p>
+							</section>
+
+						</div><!--/#main-->
+					</div><!--/#main-->
+					<!--/////////////// [index] js切り替え区間 ///////////////-->
+
+
+
+					<!--/////////////// [health] js切り替え区間 ///////////////-->
+					<div id="health">
+						<div id="main">
+
+							<section>
+								<h2>[health]調整中</h2>
+
+								<h3>調整中</h3>
+								<p>調整中です。</p>
+							</section>
+							<br>
+
+						</div><!--/#main-->
+					</div><!--/#health-->
+					<!--/////////////// [health] js切り替え区間 ///////////////-->
+
+
+
+					<!--/////////////// [crime] js切り替え区間 ///////////////-->
+					<div id="crime">
+						<div id="main">
+
+							<section>
+								<h2>[crime]調整中</h2>
+
+								<h3>調整中</h3>
+								<p>調整中です。</p>
+							</section>
+							<br>
+
+						</div><!--/#main-->
+					</div><!--/#crime-->
+					<!--/////////////// [crime] js切り替え区間 ///////////////-->
+
+
+
+					<!--/////////////// [sightseeing] js切り替え区間 ///////////////-->
+					<div id="sightseeing">
+						<div id="main">
+
+							<section>
+								<h2>[sightseeing]調整中</h2>
+
+								<h3>調整中</h3>
+								<p>調整中です。</p>
+							</section>
+							<br>
+
+						</div><!--/#main-->
+					</div><!--/#sightseeing-->
+					<!--/////////////// [sightseeing] js切り替え区間 ///////////////-->
+
+
+
+					<!--/////////////// [news] js切り替え区間 ///////////////-->
+					<div id="news">
+						<div id="main">
+
+							<section>
+								<h2>[newa]調整中</h2>
+
+								<h3>調整中</h3>
+								<p>調整中です。</p>
+							</section>
+							<br>
+
+						</div><!--/#main-->
+					</div><!--/#news-in-->
+					<!--/////////////// [news] js切り替え区間 ///////////////-->
+
+
+			
+					<!--/////////////// [activity] js切り替え区間 ///////////////-->
+					<div id="activity">
+						<div id="main">
+
+							<section>
+								<h2>[activity]調整中</h2>
+
+								<h3>調整中</h3>
+								<p>調整中です。</p>
+							</section>
+							<br>
+
+						</div><!--/#main-->
+					</div><!--/#activity-->
+					<!--/////////////// [activity] js切り替え区間 ///////////////-->
+
+
+					
+				</div><!--/#contents-in-->
+
+
+					<div id="side">
+						<div>
+							<a href="recruit.html"><img src="images/yomo-banner.png" class="pc"></a>
+							<br><br>
+							<a href="recruit.html"><img src="images/yomo-banner.png" class="pc"></a>
+						</div>
+						<br>
+
+						<nav>
+							<h2>Contents</h2>
+							<ul class="submenu">
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+								<li><a href="#">メニューサンプル</a></li>
+							</ul>
+						</nav>
+					</div><!--/#side-->
+
+			</div><!--/#contents-->
+		</div><!--/#container-->
+
+		
+
+		<footer id="footer">
+
+			<div id="footermenu">
+				<ul>
+				</ul>
+			</div><!--/footermenu-->
+
+			<div id="copyright">
+				<small>Copyright &copy; WEB sauce - satatak & pipi, UI - yomogi All Rights Reserved.</small>
+			</div>
+
+		</footer>
+
+		<!--小さな端末用（800px以下端末）メニュー-->
+		<script>
+			if (OCwindowWidth() <= 800) {
+				open_close("newinfo_hdr", "newinfo");
+			}
+		</script>
+
+		<!--メニュー開閉ボタン-->
+		<div id="menubar_hdr" class="close"></div>
+		<!--メニューの開閉処理条件設定　800px以下-->
+		<script>
+			if (OCwindowWidth() <= 800) {
+				open_close("menubar_hdr", "menubar-s");
+			}
+		</script>
+
+	</body>
+</html>

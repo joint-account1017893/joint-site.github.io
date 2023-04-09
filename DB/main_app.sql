@@ -10,7 +10,7 @@ SET time_zone = "+00:00";
 
 
 
--- テーブル `top` のテーブル構造
+-- トップページ用 テーブル `top` のテーブル構造
 CREATE TABLE 'top' (
 
   -- 総合ニュース用宣言
@@ -20,13 +20,13 @@ CREATE TABLE 'top' (
   -- サイトの更新情報・お知らせ用宣言
   'site_news_title' varchar(1000) NOT NULL,  -- サイトの更新情報・お知らせのタイトル保存
   'site_news_link' varchar(1000) NOT NULL,   -- サイトの更新情報・お知らせのリンク保存
-  'site_news_time' time(255) NOT NULL,       -- サイトの更新情報・お知らせの更新日時保存
+  'site_news_time' time(255) NOT NULL        -- サイトの更新情報・お知らせの更新日時保存
   
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
 
--- テーブル `news` のテーブル構造
+-- ニュース用 テーブル `news` のテーブル構造
 CREATE TABLE 'news' {
   
   -- 機能検討中
@@ -35,7 +35,7 @@ CREATE TABLE 'news' {
 
 
 
--- テーブル `activt` のテーブル構造
+-- 活動用 テーブル `activt` のテーブル構造
 CREATE TABLE 'activt' (
   
   -- 機能検討中
@@ -44,7 +44,7 @@ CREATE TABLE 'activt' (
 
 
 
--- テーブル `health` のテーブル構造
+--　健康用 テーブル `health` のテーブル構造
 CREATE TABLE 'health' (
   
   -- 機能検討中
@@ -53,7 +53,7 @@ CREATE TABLE 'health' (
 
 
 
--- テーブル `sightseeing` のテーブル構造
+--　観光用 テーブル `sightseeing` のテーブル構造
 CREATE TABLE 'sightseeing' (
   
   -- 機能検討中
@@ -62,7 +62,7 @@ CREATE TABLE 'sightseeing' (
 
 
 
--- テーブル `crimeinfo` のテーブル構造
+--　犯罪情報用 テーブル `crimeinfo` のテーブル構造
 CREATE TABLE 'crimeinfo' (
   
   -- 機能検討中

@@ -1,0 +1,62 @@
+:root {
+  --main-contents: #e66917;
+}
+
+.color1{
+  background: #fff;
+  color: #51b508;
+  transition: 0.5s;
+}
+.color2{
+  background: #fff;
+  color: #c41818;
+  transition: 0.5s;
+}
+.color3{
+  background: #fff;
+  color: #0072ff;
+  transition: 0.5s;
+}
+.color4{
+  background: #e66917;
+  color: #fff;
+  transition: 0.5s;
+}
+.color5{
+  background: #fff;
+  color: #e2e20c;
+  transition: 0.5s;
+}
+.color6{
+  background: #fff;
+  color: #7f0fdc;
+  transition: 0.5s;
+}
+
+.color1:hover{
+  background: #50b50880;
+  color: #fff;
+}
+.color2:hover{
+  background: #c4181876;
+  color: #fff;
+}
+.color3:hover{
+  background: #0073ff83;
+  color: #fff;
+}
+.color5:hover{
+  background: #e2e20c74;
+  color: #fff;
+}
+.color6:hover{
+  background: #800fdc76;
+  color: #fff;
+}
+
+#index       { display: none;  }
+#health      { display: none;  }
+#crime       { display: none;  }
+#sightseeing { display: block; }
+#news        { display: none;  }
+#activity    { display: none;  }
